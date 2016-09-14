@@ -1,4 +1,9 @@
 
+my_string = "fred is awesome"
+my_string = my_string.split()
+print(my_string)
+
+
 my_list = ["tommy", 23, ["spiders", "the unknown"]]
 
 print(my_list)
