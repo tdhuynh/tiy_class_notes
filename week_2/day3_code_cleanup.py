@@ -4,7 +4,16 @@
 # Inventory
 # Items
 
-player = {}
+player = {"inventory": {"red potion": {"quantity": 20}}}
+
+{
+
+    "red potion": {
+        "quantity": 1
+    }
+
+}
+
 player_name = input("Welcome Traveler! What is your name? ")
 player["name"] = player_name
 print(player)
@@ -14,5 +23,11 @@ while True:
 
     if choice == 'a':
         print("adding item to inventory")
+        item_name = input("What is the item name? ")
+        item_quantity  = int(input("How many? "))
+        player["inventory"][item_name] = {"quantity": item_quantity}
     elif choice == 'i':
         print("looking at inventory")
+        for item in player["inventory"].keys():
+            quantity = player["inventory"][item]["quantity"]
+            print("{} - {}".format(item, quantity))
