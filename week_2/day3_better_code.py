@@ -51,4 +51,15 @@ while True:
 
 # refactoring works best from inside out, not top to bottom
 # functions should only mutate variables that they are give or that they create themselves
+
+
+
+
+# game():
+#     winning = False
+#     while not winning:
+#         ..........
+#         winning = check_wins()
 #
+#         etc.....
+#     checkforwincondition()...
