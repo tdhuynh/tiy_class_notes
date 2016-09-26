@@ -35,3 +35,5 @@ ok_sword = Sword()
 
 orc.hp -= ok_sword.attack()
 print(orc.hp)
+
+#################################################
