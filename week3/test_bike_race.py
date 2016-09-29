@@ -58,7 +58,7 @@ def test_will_tell_you_who_won():
 
 def test_will_announce_winner_correctly_if_they_are_passed_finish_line():
     race = Race(50)
-    bike1 = Bike(4)
+    bike1 = Bike(4) 
     bike2 = Bike(7)
     bike3 = Bike(5)
     race.add_bikes([bike1, bike2, bike3])
