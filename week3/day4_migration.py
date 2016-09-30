@@ -9,6 +9,7 @@ create_table_command = """
 CREATE TABLE person_data (
     id serial PRIMARY KEY,
     first_name VARCHAR(20),
+    last_name VARCHAR(20),
     password VARCHAR(20),
     birthyear NUMERIC(4),
     bestie VARCHAR(20)
