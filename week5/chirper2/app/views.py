@@ -16,4 +16,9 @@ def index_view(request):
 
 
 def about_view(request):
+    print('hi tommy' + '='*30)
+    message = request.POST.get('message', '')
+    voice = request.POST.get('voice', '')
+    print(request.GET)
+    print(request.POST)
     return render(request, 'about.html')
