@@ -5,7 +5,7 @@
     {% for chirp in object_list %}
         <div class="panel panel-default">
           <div class="panel-body">
-            {{ chirp }}
+            <a href="{% url 'chirp_detail_view' chirp.id %}">{{ chirp }}</a>
           </div>
         </div>
     {% endfor %}
