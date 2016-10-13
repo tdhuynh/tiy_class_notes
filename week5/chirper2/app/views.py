@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic import TemplateView
 
 from app.models import Chirp
 from app.forms import ChirpForm
@@ -26,10 +27,11 @@ def about_view(request):
     return render(request, 'about.html')
 
 
-class ChirpView(View):
+class ChirpView(TemplateView):
+    template_name = 'chirps.html'
 
-    def get(self, request):
-        return render(request, 'chirps.html')
-
-    def post(self, request):
-        return render(request, 'chirps.html')
+    def get_context_data(self):
+        context = {
+            "all_chirps": Chirp.objects.all()
+        }
+        return context
