@@ -9,18 +9,6 @@ from app.models import Chirp
 from app.forms import ChirpForm
 
 
-def index_view(request):
-    if request.POST:
-        instance = ChirpForm(request.POST)
-        if instance.is_valid():
-            instance.save()
-    context = {
-        "form": ChirpForm(),
-        "all_chirps": Chirp.objects.all()
-    }
-    return render(request, 'index.html', context)
-
-
 def about_view(request):
     print('hi tommy' + '='*30)
     message = request.POST.get('message', '')

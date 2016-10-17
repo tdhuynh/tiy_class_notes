@@ -14,8 +14,9 @@
 
   <body>
     <div class="container">
-      <a href="{% url 'index_view' %}">Home </a>
+      <a href="{% url 'chirp_view' %}">Home </a>
       <a href="{% url 'about_view' %}">About Me </a>
+      <a href="{% url 'user_create_view' %}">Create User</a>
       <a href="{% url 'chirp_create_view' %}">Create Chirp</a>
 
       {% if not request.user.is_authenticated %}

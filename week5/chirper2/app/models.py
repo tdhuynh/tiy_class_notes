@@ -13,6 +13,17 @@ class Chirp(models.Model):
         ordering = ("-created",)
 
 
+class Vote(models.Model):
+    user = models.ForeignKey('auth.User')
+    chirp = models.ForeignKey('app.Chirp')
+    value = models.BooleanField()
+
+    @property
+    def score(self):
+        if self.value:
+            return 1
+        return -1
+
 
 # #######################################gi#########################
 # from django.dispatch import receiver

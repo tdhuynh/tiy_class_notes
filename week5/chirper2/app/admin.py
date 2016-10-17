@@ -1,4 +1,4 @@
 from django.contrib import admin
-from app.models import Chirp
+from app.models import Chirp, Vote
 
-admin.site.register(Chirp)
+admin.site.register([Chirp, Vote])
