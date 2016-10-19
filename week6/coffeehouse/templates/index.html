@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>hello world</h1>
+  {% for drink in object_list %}
+    <div class="">
+      <h1>{{ drink }}</h1>
+      <h4>${{ drink.cost }}</h4>
+      <p>
+        Created By: {{ drink.created_by }}
+      </p>
+      <blockquote>
+        {{ drink.description }}
+      </blockquote>
+      <div class="">
+        {% if request.user == drink.created_by or request.user.profile.is_owner %}
+            <a href="{% url 'special_update_view' drink.id %}">Update</a>
+            {% if request.user.profile.is_owner %}
+            <form class="" action="{% url 'special_delete_view' drink.id %}" method="get">
+              {% csrf_token %}
+              <input type="submit" name="" value="X">
+            </form>
+            {% endif %}
+        {% endif %}
+      </div>
+      <hr>
+    </div>
+  {% endfor %}
+{% endblock %}
