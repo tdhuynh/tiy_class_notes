@@ -2,14 +2,27 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import UpdateView, DeleteView
 
-from menu.models import Special
+from menu.models import Special, Profile
+from django.urls import reverse_lazy
 
 class IndexView(ListView):
     template_name = "index.html"
     model = Special
 
-class ProfileView(TemplateView):
+
+# THE FOLLOWING IS IMPORTANT FOR A USER PROFILE
+class ProfileUpdateView(UpdateView):
     template_name = "profile.html"
+    fields = ('access_level',)
+    success_url = reverse_lazy('profile_view')
+
+    def get_object(self):
+        return   Profile.objects.get(user=self.request.user)
+    # this will bypass the need for a pk or slug
+
+# with get_object, we no longer need get_queryset b/c get_object is as specific as it can get
+    # def get_queryset(self):
+    #     return Profile.objects.filter(user=self.request.user)
 
 class SpecialUpdateView(UpdateView):
     model = Special

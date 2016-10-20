@@ -8,8 +8,6 @@ class Special(models.Model):
     description = models.TextField()
     cost = models.FloatField()
 
-    def __str__(self):
-        return self.title
 
 ACCESS_LEVELS = [
     ('e', 'Employee'),
@@ -20,8 +18,6 @@ class Profile(models.Model):
     user = models.OneToOneField('auth.User')
     access_level = models.CharField(max_length=1, choices=ACCESS_LEVELS)
 
-    def __str__(self):
-        return self.user
 
     @property
     def is_owner(self):
