@@ -30,7 +30,7 @@ def get_data(endpoint, lookup="name"):
 
         for person in json_result["results"]:
             print(person[lookup])
-        if input("Press Enter to keep going, type 'n' to keep going " ):
+        if input("Press Enter to keep going, type 'n' to stop " ):
             break
         url = json_result["next"]
 
