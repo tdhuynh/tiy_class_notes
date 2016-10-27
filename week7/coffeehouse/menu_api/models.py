@@ -10,23 +10,8 @@ class Special(models.Model):
     price = models.FloatField()
     description = models.TextField()
     ingredients = models.ManyToManyField('menu_api.Ingredient')
+    created_by = models.ForeignKey('auth.User')
 
     @property
     def calorie_count(self):
         return sum(self.ingredients.all().values_list("calories", flat=True))
-
-    # create a property that creates the onbase % of a player
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
