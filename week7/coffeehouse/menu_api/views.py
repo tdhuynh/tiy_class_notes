@@ -20,6 +20,6 @@ class IngredientListAPIView(ListCreateAPIView):
     serializer_class = IngredientSerializer
 
 
-class IngredientDetailAPIView(RetrieveAPIView):
+class IngredientDetailAPIView(RetrievedAPIView):
     queryset = Ingredient.objects.all()
     serializer_class = IngredientSerializer

@@ -16,3 +16,17 @@ class Special(models.Model):
         return sum(self.ingredients.all().values_list("calories", flat=True))
 
     # create a property that creates the onbase % of a player
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
