@@ -17,7 +17,6 @@ class SpecialListCreateAPIView(ListCreateAPIView):
         # print(kwargs)
 
 
-
 class SpecialUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Special.objects.all()
     serializer_class = SpecialSerializer

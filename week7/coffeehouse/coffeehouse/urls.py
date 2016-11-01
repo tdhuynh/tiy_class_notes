@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^ingredients/(?P<pk>\d+)/$', IngredientDetailAPIView.as_view(), name='ingredient_detail_api_view'),
     url(r'^specials/$', SpecialListCreateAPIView.as_view(), name='special_list_create_api_view'),
     url(r'^specials/(?P<pk>\d+)/$', SpecialUpdateDestroyAPIView.as_view(), name='special_update_destroy_api_view'),
-
+    url(r'^/$',)    
 ]
