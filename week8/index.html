@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome to javascript town</h1>
+    <p id="meat_text">
+      Bacon ipsum dolor amet meatball turducken chicken burgdoggen hamburger boudin. Andouille salami prosciutto jowl pork loin ham hock jerky meatloaf ham tenderloin. Pork brisket cupim andouille pork chop beef ribs shankle. Tail salami sirloin fatback frankfurter, leberkas jerky chuck. Shoulder pork belly leberkas, chicken brisket venison chuck porchetta. Pork loin venison meatloaf short loin pork belly pastrami tail salami. Salami frankfurter boudin spare ribs venison turkey.
+
+Salami tenderloin doner drumstick, leberkas shank kevin. Landjaeger sausage short ribs flank, pork belly pork drumstick strip steak salami prosciutto frankfurter ham pastrami boudin doner. Kevin meatball hamburger landjaeger tail pig jerky. Turducken alcatra cow drumstick swine pork flank bacon prosciutto pork loin pork chop leberkas. Salami jerky pig landjaeger brisket burgdoggen boudin ground round corned beef porchetta kevin sausage pork loin drumstick short loin. Pork hamburger short ribs pastrami meatloaf. Boudin beef ribs bacon, shank prosciutto ham hock ball tip salami drumstick venison.
+    </p>
+    <p>
+      I be doin javascript
+    </p>
+    <p id="clickBye">
+
+    </p>
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      /*
+      console.log("hello world");
+      // $("#meat_text").text("Coffee has gone cold. jib jab")
+      $("#meat_text").on("click", function(e) {
+        console.log($("#meat_text").text("Coffee has gone cold. jib jab"));
+      });
+      */
+      var wordArray = ["this", "is", "the", "weirdest", "project", "ever."];
+      for (var i = 0 ; i < wordArray.length ; i++) {
+        var newElement = $("<span id=" + i + ">")
+                         .text(wordArray[i] + " ")
+                         .on("click", function(e){
+                         e.target.remove();
+                         });
+        $("#clickBye").append(newElement);
+      }
+
+</script>
+
+  </body>
+</html>
