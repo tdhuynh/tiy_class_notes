@@ -33,3 +33,5 @@ class SpecialUpdateView(UpdateView):
 class SpecialListAPIView(ListAPIView):
     queryset = Special.objects.all()
     serializer_class = SpecialSerializer
+
+    
